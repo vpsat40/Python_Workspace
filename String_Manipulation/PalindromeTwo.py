@@ -19,3 +19,18 @@
 #     Tags: string manipulation searching
 
 # */
+
+def PalindromeTwo(input):
+    res = False
+
+    mystr = str(input)
+    mystr.replace(' ', '')
+    for c in mystr:
+        
+
+    return res
+
+if __name__ == "__main__":
+    print(PalindromeTwo('Noel - sees Leon'))
+    print(PalindromeTwo('A war at Tarawa!'))
+    print(PalindromeTwo('Anne, I vote more cars race Rome-to-Vienna'))
