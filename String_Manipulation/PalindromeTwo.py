@@ -20,17 +20,39 @@
 
 # */
 
+import string
+
 def PalindromeTwo(input):
-    res = False
 
-    mystr = str(input)
-    mystr.replace(' ', '')
+    if type(input) == str:
+        mystr = input
+    else:
+        print('Input type was not a string. Converting now...')
+        mystr = str(input)
+
+    mystr = (mystr.replace(' ', '')).casefold()
+    print('String after removing all spaces is - ' + mystr)
+
+    # Use inbuilt string methods to convert string to same case
+    # use lower(),  upper() or casefold()
+    # mystr = mystr.lower()
+    newstr = ''
+
+    # Filter the string for any special characters
     for c in mystr:
-        
+        if c.isalpha() or c.isdigit():
+            newstr += c
 
-    return res
+    print(newstr)
+    
+    if newstr == newstr[::-1]:
+        return True
+    else:
+        return False        
 
 if __name__ == "__main__":
     print(PalindromeTwo('Noel - sees Leon'))
     print(PalindromeTwo('A war at Tarawa!'))
     print(PalindromeTwo('Anne, I vote more cars race Rome-to-Vienna'))
+    number=123421
+    print(PalindromeTwo(number))
